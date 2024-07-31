@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Game World</title>
+    <meta name="description" content="Vanilla JS를 이용한 Mini Game Project">
+    <link rel="icon" type="image/x-ico" href="./resources/favicon/favicon.ico" th:href="@{/resources/favicon/favicon.ico}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/common/styles.css}" href="./css/common/styles.css">
+    <link rel="stylesheet" th:href="@{/css/index.css}" href="./css/index.css">
+</head>
+<body>
+    <div id="container" class="no-drag">
+        <header class="intro">
+            <h1 class="intro__title" lang="en" aria-label="게임 월드에 오신 걸 환영합니다."></h1>
+            <div class="intro__button" aria-hidden="true"></div>
+        </header>
+
+        <main id="game" aria-label="게임 목록">
+            <article class="game__wrapper" id="card-matching" aria-hidden="true">
+                <a class="game__overlay" th:href="@{/king/king-card}" href="card/game-cm.html" aria-label="카드 짝 맞추기 게임: 카드를 뒤집어 같은 그림을 맞춰보세요."></a>
+                <figure class="game__image"></figure>
+                <h1 class="game__title" lang="en">
+                    카드 짝 맞추기
+                </h1>
+                <p class="game__desc" lang="en">
+                    카드를 뒤집어 같은 그림을 맞춰보세요.<br/>
+                </p>
+            </article>
+        </main>
+    </div>
+    <script src="./js/index.js" th:src="@{/js/index.js}"></script>
+</body>
+</html>
