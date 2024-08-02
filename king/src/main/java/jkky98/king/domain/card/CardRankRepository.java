@@ -15,7 +15,7 @@ public class CardRankRepository {
 
     public CardRank save(CardRank cardRank) {
         cardRank.setId(++sequence);
-        store.put(cardRank.getUsername(), cardRank);
+        store.put(cardRank.getUserName(), cardRank);
         return cardRank;
     }
 

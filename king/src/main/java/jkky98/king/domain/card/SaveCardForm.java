@@ -1,15 +1,15 @@
 package jkky98.king.domain.card;
 
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
-public class CardRank {
+public class SaveCardForm {
 
-    private Long id;
-
+    @NotNull
     private String userName;
 
+    @NotNull
     private Integer highLevel;
 
 }

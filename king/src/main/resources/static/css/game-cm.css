@@ -231,6 +231,11 @@
     width: 40%;
     padding: 5px;
 }
+.white-input {
+    width: 40%
+    padding: 5px;
+    margin: 1vh;
+}
 
 .show {
     display: block;

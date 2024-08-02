@@ -331,7 +331,7 @@ function showGameResult() {
     <h1 class="modal__content-title--result color-red">
         게임 종료!
     </h1>
-    <span class="modal__content-title--stage">
+    <span id="stage-card-level" class="modal__content-title--stage">
         기록 : <strong>STAGE ${stage}</strong>
     </span>
     <p class="modal__content-title--desc">

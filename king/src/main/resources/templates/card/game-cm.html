@@ -46,23 +46,57 @@
         </div>
 
         <div class="modal modal-layer">
+            <form id="card-save" th:action th:object="${saveCardForm}" method="post">
             <div class="modal__content">
                 <div class="modal__content-title">
                 </div>
-        
+                <label for="userName">
+                    <input class="white-input form-control"
+                           type="text"
+                           id="userName"
+                           th:field="*{userName}"
+                           placeholder="닉네임을 입력하세요"/>
+                </label>
+                <label for="highLevel">
+                    <input type="hidden"
+                           id="highLevel"
+                           th:field="*{highLevel}"
+                    />
+                </label>
+
+                <button class="white-button history-save-button" type="submit">
+                    기록 저장
+                </button>
+
                 <button class="white-button modal__content-close-button" type="button"
                         th:onclick="|location.href='@{/king}'|">
                     닫기
                 </button>
-
-                <button class="white-button history-save-button" type="button"
-                        th:onclick="|location.href='@{/king}'|">
-                    기록 저장
-                </button>
             </div>
+            </form>
         </div>
     </div>
-
     <script src="./js/game-cm.js" th:src="@{/js/game-cm.js}"></script>
+    <script>
+        // 폼 제출 시 히든 필드를 업데이트하는 함수
+        function updateHiddenFieldWithStage() {
+            // #stage-card-level 요소를 가져옵니다.
+            var stageCardLevelElement = document.getElementById('stage-card-level');
+
+            // 요소에서 'STAGE ' 뒤의 값을 추출합니다.
+            var stageText = stageCardLevelElement.textContent;
+            var stageValue = stageText.split('STAGE ')[1].trim();
+
+            // 히든 input의 value를 업데이트합니다.
+            document.getElementById('highLevel').value = stageValue;
+        }
+
+        // 폼 제출 이벤트 리스너 추가
+        document.getElementById('card-save').addEventListener('submit', function(event) {
+            // 히든 필드를 업데이트합니다.
+            updateHiddenFieldWithStage();
+            // 폼 제출이 발생합니다.
+        });
+    </script>
 </body>
 </html>
