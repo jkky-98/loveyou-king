@@ -11,9 +11,69 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/common/styles.css}" href="./css/common/styles.css">
-    <link rel="stylesheet" th:href="@{/css/game-cm.css}" href="./css/game-cm.css">
+    <link rel="stylesheet" th:href="@{/css/index.css}" href="./css/index.css">
+    <style>
+        .rank__title {
+            font-size: 60px;
+            line-height: 1.166666666666667;
+            color: #FFF;
+            text-align: center;
+            justify-content: flex-start;
+        }
+    </style>
+    <!-- 스타일링을 위한 CSS 예제 (선택사항) -->
+    <style>
+        .table-container {
+            margin-top: 20px; /* 테이블과 헤더 사이의 간격 조절 */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            color: #ffffff; /* 텍스트 색상을 흰색으로 설정 */
+        }
+
+        th {
+            background-color: #333333; /* 헤더 배경 색상을 어두운 색으로 설정 */
+        }
+    </style>
+
 </head>
 <body>
-<div>랭킹 페이지 입니다.</div>
+<div id="container" class="no-drag">
+    <header class="intro">
+        <div>
+            <h1 class="rank__title">Ranking</h1>
+        </div>
+        <!-- 테이블을 추가합니다. -->
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Contribution</th>
+                    <th>Count</th>
+                    <th>Highest Level</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- 예제 데이터 행 추가 -->
+                <tr th:each="slaver : ${cardGameRankSlavers}">
+                    <td th:text="${slaver.userName}">JohnDoe</td>
+                    <td th:text="${slaver.contribution}">10</td>
+                    <td th:text="${slaver.count}">5</td>
+                    <td th:text="${slaver.highLevel}">10</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </header>
+</div>
 </body>
 </html>

@@ -24,6 +24,9 @@ public class CardRankRepository {
     }
 
     public List<CardRank> findAll() {
+        if (store.isEmpty()) {
+            return new ArrayList<>();
+        }
         return new ArrayList<>(store.values());
     }
 }

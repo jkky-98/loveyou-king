@@ -1,5 +1,6 @@
 package jkky98.king.domain.card;
 
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
@@ -7,9 +8,10 @@ import lombok.Data;
 public class SaveCardForm {
 
     @NotNull
+    @NotEmpty
     private String userName;
 
     @NotNull
-    private Integer highLevel;
+    private Integer level;
 
 }
